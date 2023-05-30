@@ -18,10 +18,11 @@ for i in range(60):
 
 # 동영상을 저장하기 위한 코드 
 fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
+# 출력 비디오 파일의 이름, 코덱, 프레임 속도 및 프레임 크기를 설정합니다.
 out = cv2.VideoWriter('videos/output.mp4', fourcc, cap.get(cv2.CAP_PROP_FPS), (background.shape[1], background.shape[0]))
 out2 = cv2.VideoWriter('videos/original.mp4', fourcc, cap.get(cv2.CAP_PROP_FPS), (background.shape[1], background.shape[0]))
 
-# while을 사용해서 캠을 읽어온다. 
+# while을 사용해서 카메라가 열려있는지를 확인합니다. 
 while(cap.isOpened()):
   # 캠으로 읽어들인것을 img에 저장한다. 
   ret, img = cap.read()
